@@ -10,14 +10,15 @@ class Address(models.Model):
         max_length = 4,
     )
     locality = models.CharField(
-        verbose_name = "市町村",
+        verbose_name = "区市町村",
         max_length = 10,
     )
     street = models.CharField(
-        verbose_name = "番地",
+        verbose_name = "町域",
         max_length = 40,
     )
     extended = models.CharField(
-        verbose_name = "建物",
+        verbose_name = "以降の住所",
         max_length = 40,
+        blank = True,
     )

@@ -1,0 +1,16 @@
+{% extends 'address/base.html' %}
+{% block header %}
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <title>住所一覧</title>
+{% endblock header %}
+{% block content %}
+        <h1>住所一覧</h1>
+        <a href="/address/create">住所入力</a>
+        <ul>
+            {% for address in object_list %}
+            <li>〒{{ address.postal_code }} {{ address.region }}
+                {{ address.locality }}{{ address.street}} {{ address.extended }}</li>
+            {% endfor %}
+        </ul>
+{% endblock content%}

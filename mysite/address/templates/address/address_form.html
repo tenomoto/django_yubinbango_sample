@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang='ja'>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+{% extends 'address/base.html' %}
+{% block header %}
         <!-- Bootstrap CSS -->
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
@@ -11,18 +7,14 @@
          <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
  
         <title>住所入力</title>
-    </head>
-    <body>
-
-        <div class="container">
+{% endblock header %}
+{% block content %}
             <h1>住所入力</h1>
             <p>郵便番号を入力して下さい。住所の一部が自動入力されます。「以降の住所」を記入してください。</p>
-            <form class="h-adr">
+            <form class="h-adr" action = "" method = "post">
+                {%  csrf_token %}
                 <span class="p-country-name" style="display:none;">Japan</span>
                 {{ form.as_p }}
                 <button type="submit" class="btn btn-primary">送信</button>
             </form>
-        </div>
-
-    </body>
-</html>
+{% endblock content %}
